@@ -1,0 +1,8 @@
+@startuml
+  "Kafka adapter" -> Kafka: listen for new TradeGecko messages
+  Kafka -> "Kafka adapter": TradeGecko payload
+  "Kafka adapter" -> function: TradeGecko payload
+  function -> function: transform TradeGecko into BigCommerce payload
+  function -> "http adapter": BigCommerce payload
+  "http adapter" -> BigCommerce: create new product
+@enduml

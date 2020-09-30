@@ -1,0 +1,9 @@
+@startuml
+  TradeGecko -> "webhook adapter"
+  "webhook adapter" -> function
+  function -> "http adapter"
+  "http adapter" -> TradeGecko: fetch full payload
+  TradeGecko -> "http adapter"
+  "http adapter" -> function
+  function -> "Kafka adapter": publish full payload
+@enduml
