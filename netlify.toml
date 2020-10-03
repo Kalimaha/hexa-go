@@ -5,3 +5,8 @@
 [build.environment]
     GOBIN = "/opt/build/repo/functions"
     GO_IMPORT_PATH="github.com/Kalimaha/hexa-go"
+
+[[redirects]]
+    from = "/api/*"
+    to = "/.netlify/functions/:splat"
+    status = 200
