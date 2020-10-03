@@ -8,11 +8,11 @@ import (
 )
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
-	fmt.Print("Got request for '/.netlify/functions/hello', this message is dumpled by 'cmd/hello/pippo.go'")
+	fmt.Print("Got request for '/.netlify/functions/hello', this message is dumpled by 'vendor/hello/pippo.go'")
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       spam.SuggestShit(),
-		//Body:       utils.IntroductionYourself("cmd/goodbye/pippo.go"),
+		Body:       spam.Ciao(),
+		//Body:       utils.IntroductionYourself("vendor/goodbye/pippo.go"),
 	}, nil
 }
 

@@ -10,10 +10,10 @@ The goal of this repository is to provide a blueprint to quickly implement and
 deploy business logic that can be consumed as a webhook and/or asynchronous
 job with AuthN/AuthZ, centralised logging and monitoring features.
 
-Just implement the `call` function in [hexagon.rb](cmd/hexagon.rb) and you're 
+Just implement the `call` function in [hexagon.rb](vendor/hexagon.rb) and you're 
 good to go 🙂 Use one of the _"pre-configured"_ providers and :shipit:!
 
-The core of the hexagon is [the function](cmd/hexagon.rb) that implements the business logic. Such
+The core of the hexagon is [the function](vendor/hexagon.rb) that implements the business logic. Such
 function interacts with the external world by means of adapters and clients. 
 With reference to the picture below:
 
