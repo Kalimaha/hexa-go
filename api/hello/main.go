@@ -4,14 +4,15 @@ import (
 	"fmt"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
+	"spam"
 )
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
-	fmt.Print("Got request for '/.netlify/functions/hello', this message is dumpled by 'cmd/hello/main.go'")
+	fmt.Print("Got request for '/.netlify/functions/hello', this message is dumpled by 'cmd/hello/pippo.go'")
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       "Hello, I'm from 'cmd/hello/main.go'!",
-		//Body:       utils.IntroductionYourself("cmd/goodbye/main.go"),
+		Body:       spam.SuggestShit(),
+		//Body:       utils.IntroductionYourself("cmd/goodbye/pippo.go"),
 	}, nil
 }
 
