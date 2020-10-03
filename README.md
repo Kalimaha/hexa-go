@@ -10,10 +10,10 @@ The goal of this repository is to provide a blueprint to quickly implement and
 deploy business logic that can be consumed as a webhook and/or asynchronous
 job with AuthN/AuthZ, centralised logging and monitoring features.
 
-Just implement the `call` function in [hexagon.rb](./src/hexagon.rb) and you're 
+Just implement the `call` function in [hexagon.rb](cmd/hexagon.rb) and you're 
 good to go 🙂 Use one of the _"pre-configured"_ providers and :shipit:!
 
-The core of the hexagon is [the function](./src/hexagon.rb) that implements the business logic. Such
+The core of the hexagon is [the function](cmd/hexagon.rb) that implements the business logic. Such
 function interacts with the external world by means of adapters and clients. 
 With reference to the picture below:
 
@@ -31,20 +31,20 @@ With reference to the picture below:
   publish event to a centralised system such as Honeybadger
   * **others as required**
 
-![Hexagon](./documentation/images/hexagon.png)
+![Hexagon](docs/images/hexagon.png)
 
 ## Adapters
 
-* [WIP] [Security](./documentation/adapters/security/README.md): provides machine-to-machine AuthN/AuthZ functionalities
-* [Webhook](./documentation/adapters/webhook/README.md): makes the function invokable by an upstream but also monitorable _(e.g. Pingdom)_ through an healthcheck endpoint
-* [WIP] [Worker](./documentation/adapters/worker/README.md): makes the function enqueuable
+* [WIP] [Security](docs/adapters/security/README.md): provides machine-to-machine AuthN/AuthZ functionalities
+* [Webhook](docs/adapters/webhook/README.md): makes the function invokable by an upstream but also monitorable _(e.g. Pingdom)_ through an healthcheck endpoint
+* [WIP] [Worker](docs/adapters/worker/README.md): makes the function enqueuable
 
 ## Clients
 
-* [WIP] [HTTP](./documentation/clients/http/README.md): used to post payloads to downstreams
-* [WIP] [Kafka](./documentation/clients/kafka/README.md): reads/write to/from Kafka
-* [WIP] [Logs](./documentation/clients/logs/README.md): push logs to a centralised system such as Splunk
-* [Monitoring](./documentation/clients/http/monitoring.md): push messages to a monitoring system _(e.g. Honeybadger)_
+* [WIP] [HTTP](docs/clients/http/README.md): used to post payloads to downstreams
+* [WIP] [Kafka](docs/clients/kafka/README.md): reads/write to/from Kafka
+* [WIP] [Logs](docs/clients/logs/README.md): push logs to a centralised system such as Splunk
+* [Monitoring](docs/clients/http/monitoring.md): push messages to a monitoring system _(e.g. Honeybadger)_
 
 ## Deployment
 
@@ -55,6 +55,6 @@ JavaScript and Go only
 
 ## Use cases
 
-* [TradeGecko event](./documentation/use-cases/tradegecko-event/README.md)
-* [BigCommerce - Create New Product](./documentation/use-cases/bigcommerce-create-new-product/README.md)
-* [BigCommerce - Update Existing Product](./documentation/use-cases/bigcommerce-update-existing-product/README.md)
+* [TradeGecko event](docs/use-cases/tradegecko-event/README.md)
+* [BigCommerce - Create New Product](docs/use-cases/bigcommerce-create-new-product/README.md)
+* [BigCommerce - Update Existing Product](docs/use-cases/bigcommerce-update-existing-product/README.md)
