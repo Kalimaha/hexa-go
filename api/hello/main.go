@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
-	"spam"
+	"github.com/Kalimaha/hexa-go/pkg/repositories"
 )
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	fmt.Print("Got request for '/.netlify/functions/hello', this message is dumpled by 'vendor/hello/pippo.go'")
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       spam.Ciao(),
+		Body:       repositories.Ciao(),
 		//Body:       utils.IntroductionYourself("vendor/goodbye/pippo.go"),
 	}, nil
 }
