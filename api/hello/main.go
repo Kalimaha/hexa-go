@@ -2,16 +2,17 @@ package main
 
 import (
 	"fmt"
+	"github.com/Kalimaha/hexa-go/internal/pkg/utils"
+	"github.com/Kalimaha/hexa-go/pkg/repositories"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/Kalimaha/hexa-go/pkg/repositories"
 )
 
 func handler(request events.APIGatewayProxyRequest) (*events.APIGatewayProxyResponse, error) {
 	fmt.Print("Got request for '/.netlify/functions/hello', this message is dumpled by 'vendor/hello/pippo.go'")
 	return &events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       repositories.Ciao(),
+		Body:       repositories.Ciao() + utils.DimmiTe(),
 		//Body:       utils.IntroductionYourself("vendor/goodbye/pippo.go"),
 	}, nil
 }
